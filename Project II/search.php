@@ -38,9 +38,9 @@ include 'includes/header.php';
             echo "<h3 class='mb-5'>No results found try again....</h3>";
           } else {
            foreach ($rows as $row) {
-             $post = filter_var(substr($row['post_content'],0, 55), FILTER_SANITIZE_STRING);
+             $post = filter_var(substr($row['post_body'],0, 55), FILTER_SANITIZE_STRING);
              echo "<div class='col-md-6'>
-                   <h3><a href='article.php?id={$row['ID']}'>{$row['post_title']}</a></h3>
+                   <h3><a href='post.php?id={$row['ID']}'>{$row['post_title']}</a></h3>
                    <p>{$post}...</p></div>";
            }
          }

@@ -1,4 +1,3 @@
-console.log("script loaded");
 // Get elements to be used
 let searchinput = document.querySelector("input.search");
 let ajaxoutputdiv = document.querySelector(".ajax-output");
@@ -63,7 +62,7 @@ function outputSearchResults(rows) {
   let articlesrow = document.querySelector(".recent-articles .row");
 
   rows.forEach((item) => {
-    output+= `<div class="col-md-6"><h3><a  href="article.php?id=${item.ID}">${item.post_title}</a></h3>
+    output+= `<div class="col-md-6"><h3><a href="post.php?id=${item.ID}">${item.post_title}</a></h3>
     <img class='img-fluid' src='${item.post_img}' alt=''>
     <p>${item.post_body}</p></div>`;
   });
@@ -118,7 +117,7 @@ commentcard.forEach((card, i) => {
 function commentAjax(comment, postid) {
 
   let xhr = new XMLHttpRequest();
-  xhr.open("POST", "func/commentmanager.php", true);
+  xhr.open("POST", "functions/commentmanager.php", true);
   // to use the post method we must set the request headers
   // depending on the form data being sent
   xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
